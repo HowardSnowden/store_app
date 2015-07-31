@@ -1,0 +1,50 @@
+
+<div class='container'>
+        <header class='<header class="navbar navbar-fixed-top navbar-inverse">'>
+            
+            <ul class='social'>
+                <li><a href="http://facebook.com/"><i class="fa fa-facebook"></i></a></li>
+        
+                 <li><a href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                 <li><a href="http://plus.google.com/"><i class="fa fa-google-plus"></i> </a></li>
+                <li><a href="http://tumblr.com"><i class="fa fa-tumblr"></i> </a></li>
+                <li><a href="http://pinterest.com"><i class="fa fa-pinterest"></i> </a></li>
+                <li><a href="http://youtube.com"><i class="fa fa-youtube"></i> </a></li>
+            </ul>
+            <ul>
+             
+                <% if user_signed_in? %>
+                <li>Logged in as <strong><%= current_user.email %></strong></li>
+                <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary' %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-primary'  %></li>
+                <% else %>
+                <li><%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary'  %></li>
+                    
+                <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-primary', :id =>'login'  %>
+                <div id='login-content'><%= render 'layouts/login'%> </div>
+                
+                </li>
+                
+                <% end %>
+            
+      <% unless controller.controller_name == 'orders' || user_signed_in? && current_user.admin == true %>  <li><%=link_to "Cart (#{item_count(@cart)})" , @cart, id:'cart', class:'btn btn-primary'%>
+               
+   
+                <div id='cart_view'><%= render @cart %></div> 
+                </li><%end%>
+            
+           <%if user_signed_in? && current_user.admin == true %> <%=render 'layouts/admin_buttons'%><%end%></ul>
+            
+    </header>
+</div>
+	<div class='container-fluid'><div class='row' id='logo'>
+            <div class='col-md-12'>
+                <%= link_to image_tag("logo.jpg", alt: "Lugnuts Auto Parts logo"), root_path %>
+                <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+        </div>
+        </div>
+</div>
+<%= render 'layouts/header_navbar' %>
+  

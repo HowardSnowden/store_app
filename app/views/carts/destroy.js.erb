@@ -1,0 +1,7 @@
+$('#cart_view').html("<%=j render @cart %>");
+$('#cart_view').hide('blind', 1000);
+$('#cart').html("Cart (<%= item_count(@cart) %>)");
+$( "#hidecart" ).on( "click", function( event ) {
+    event.preventDefault();
+    $('#cart_view').hide();
+});

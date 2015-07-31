@@ -1,0 +1,83 @@
+// Place all the behaviors and hooks related to the matching controller here.
+//All this logic will automatically be available in application.js.
+// You can use CoffeeScript in this file: http://coffeescript.org/
+
+var ready = function(){
+    //dropdown behavior
+    $('ul.navb li.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(100).show();
+  }, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(100).hide();
+});
+
+function hideOtherBoxes(element){
+    if ($(element).is(':visible')){
+        $(element).hide();
+}
+}
+
+$('#cart').click(function(e){
+    e.preventDefault();
+    $('#cart_view').slideToggle();
+    $( "#hidecart" ).on( "click", function( event ) {
+    event.preventDefault();
+    $('#cart_view').hide();
+});
+  hideOtherBoxes('#login-content');
+
+});
+    
+    
+//show login form
+$('#login').click(function(e){
+    e.preventDefault();
+    $('#login-content').slideToggle();
+    if ($('#login-content').is(":visible")){
+    $('#login-content').find('#user_email').focus();
+    }
+    hideOtherBoxes('#cart_view');
+});
+
+
+//make login request
+
+
+$('#login-content .actions input').click(function(e){
+  e.preventDefault();
+  var email = $('#user_email').val();
+  var password = $('#user_password').val();
+  var token = $('#token').val();
+  
+  $.ajax({
+       url:'/users/sign_in.json',
+       type:'POST',
+       dataType:'json',
+       data: {"user":{"email": email, "password": password, commit:'Log in', remember_me:1,"authenticity_token":token}},
+      statusCode: {
+          401: function(){
+              
+              $('#login-fail').text('Invalid username/password');
+              $('#user_password').val('');
+          }
+      }
+   
+  }).done(function(data, statusText, xhr){
+     
+      window.location.reload(true);
+      
+  });
+  });
+
+   
+  
+    
+//make logout request
+  
+
+};
+
+     
+     
+     
+$(document).ready(ready);
+$(document).on('page:load', ready);

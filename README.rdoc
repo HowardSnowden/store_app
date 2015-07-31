@@ -1,0 +1,52 @@
+== README
+Project File of Damien Pyles and Shawn Shrader
+Franklin University, 2015WI
+
+INSTALL NOTES:
+
+1. $ bundle install
+2. $ rake db:migrate
+3. $ rake db:data:load
+
+
+CURRENT KNOWN ISSUES:
+1. Logo size too large. Resolve: Fix through CSS.
+2. Almost no styles, but styles are active. Resolve: Add CSS styles.
+3. Products page; new item: Error when not all fields have data. Resolve: review product model and DB.
+4. Products page; delete item: suspect method isn't firing off, no dialog box. Resolve: review controller for destroy method.
+-->fixed. There was no JavaScript tag being included in the header. Had to change coffee-script-source to 1.8.0 for 
+turbolinks to play well with my version of rails
+
+
+
+
+
+
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

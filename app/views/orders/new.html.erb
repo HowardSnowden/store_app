@@ -1,0 +1,28 @@
+<div class= 'container checkout'>
+    <h1>Checkout</h1>
+    <div class='row'>
+        <div class='col-md-8'>
+            <%= render 'form' %>
+        </div>
+    <div class='col-md-4'>
+        <div class='order-summary'>
+            <h2>Order Summary</h2>
+            <table class='table'>
+            <% @cart.line_items.each do |t|%>
+              <tr>
+               <td><%=t.product.productName%></td>
+                <td><%=t.quantity%></td>
+                 <td><%=number_to_currency(t.total_price)%></td>
+                </tr>
+                <%end%>
+                 <tr class="total_line">
+        <td colspan='2'>Total</td>
+        <td class="total_cell"><%=number_to_currency(@cart.total_price) %></td>
+    
+    </tr>
+            </table>
+        </div>
+
+    </div>
+    </div>
+</div>

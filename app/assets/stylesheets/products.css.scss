@@ -1,0 +1,23 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.products{
+    float:left;
+    background-color:#d9d9e2;
+    width:95%;
+    h1{
+      text-align:left;
+       padding-left:5px;
+        color: #e06010;
+       text-shadow: 1px 1px rgba(252, 152, 89, 0.8);
+   }
+}
+
+
+ td {
+    .btn{
+        margin:10px;
+    }
+ }
+

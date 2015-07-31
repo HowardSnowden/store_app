@@ -1,0 +1,46 @@
+<div class="container">
+  <h1> Lugnuts Product Item View</h1>
+  <div class="col-sm-4">
+    <p>
+      <strong>Product Name:</strong>
+      <%= @product.productName %>
+    </p>
+
+    <p>
+      <strong>Product Line:</strong>
+      <%= @product.productLine %>
+    </p>
+
+    <p>
+      <strong>Product Description:</strong>
+      <%= @product.productDescription %>
+    </p>
+
+    <p>
+      <strong>Quantity in Stock:</strong>
+      <%= @product.quantityInStock %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@product.MSRP) %>
+    </p>
+    <%= button_to 'Add to Cart', line_items_path(product_id: @product.id), class:'btn btn-primary', remote: true %>
+    </br>
+    <%= link_to 'Back to Product List', products_path %>
+    </br><hr>
+    <% if can? :create, @product %>
+      <%= link_to "Admin: New Item", new_product_path %>
+    <% end %>
+    </br>
+    <% if can? :update, @product %>
+      <%= link_to "Admin: Edit", edit_product_path(@product) %>
+    <% end %>
+    </br>
+    <% if can? :destroy, @product %>
+      <%= link_to "Admin: Destroy", product_path(@product), method: :delete, data: { confirm: "Are you sure you wish to delete this Product?" }  %>
+    <% end %>
+
+
+  </div>
+</div>

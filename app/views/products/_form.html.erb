@@ -1,0 +1,63 @@
+<%= form_for @product do |f| %>
+
+	<% if @product.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@product.errors.count, "error") %> prohibited 
+					this product from being saved:
+			</h2>
+			<ul>
+				<% @product.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="container">
+	<div class="col-sm-2">
+	<p>
+		<%= f.label :Product_Code %><br>
+		<%= f.text_field :productCode %>
+	</p>
+	<p>
+		<%= f.label :Product_Name %><br>
+		<%= f.text_field :productName %>
+	</p>
+	<p>
+		<%= f.label :productLine %><br>
+		<%= f.text_field :productLine %>
+	</p>
+		<p>
+		<%= f.label :productScale %><br>
+		<%= f.text_field :productScale %>
+	</p>
+		<p>
+		<%= f.label :productVendor %><br>
+		<%= f.text_field :productVendor %>
+	</p>
+	</div>
+	<div class="col-sm-2">
+		<p>
+		<%= f.label :productDescription %><br>
+		<%= f.text_field :productDescription %>
+	</p>
+		<p>
+		<%= f.label :quantityInStock %><br>
+		<%= f.text_field :quantityInStock %>
+	</p>
+		<p>
+		<%= f.label :buyPrice %><br>
+		<%= f.text_field :buyPrice %>
+	</p>
+		<p>
+		<%= f.label :MSRP %><br>
+		<%= f.text_field :MSRP %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+	</div>
+	</div>
+
+<% end %>

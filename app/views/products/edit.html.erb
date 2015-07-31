@@ -1,0 +1,13 @@
+<div class="container">
+	<h1>Edit a Lugnuts Product</h1>
+ 	<div class="col-sm-4">
+		<%= render 'form' %>
+
+    <%= link_to 'Back to Product List', products_path %>
+    </br><hr>
+    <% if can? :create, @product %>
+      <%= link_to "Admin: New Item", new_product_path %>
+    <% end %>
+    </br>
+  </div>
+</div>

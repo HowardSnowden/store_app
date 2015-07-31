@@ -1,0 +1,62 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.carouselWrap{
+    
+    
+    width:100%;
+    background-color:#0071BC;
+    height:550px;
+    margin-bottom:50px;
+    margin-top:20px;
+    position:relative;
+    
+    .textWrap{
+        width:300px;
+        margin-left:50px;
+        padding-top:10px;
+        h1{
+            font-size:3em;
+            width:90%;
+            color:#fff;
+            font-weight:700;
+            }
+        h2{color:white;
+            margin-top:0px;
+            text-align:center;
+            font-size:1.7em;
+        }
+        p{
+            color:#8ce6f2;
+            font-size:1.1em;}
+    }
+}
+
+
+
+#myCarousel{
+    padding-top:10px;
+    padding-bottom:20px;
+    background-color:black;
+    width:65%;
+    margin-right:auto;
+    margin-left:auto;
+    position:absolute;
+    top:50px;
+    right:10px;
+    
+}
+
+
+.carousel-inner{
+    .item{
+        img{
+          width:70%;
+           margin:auto;
+    }
+}
+}

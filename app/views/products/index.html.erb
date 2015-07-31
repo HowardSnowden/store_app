@@ -1,0 +1,26 @@
+<div class= 'container'>
+<% provide(:title, "Products") %>
+    <div class='products'><h1><%=@title%></h1></div>
+<div class='row'>
+<table class='table'>
+  <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+  </tr>
+ 
+  <% @products.each do |product| %>
+    
+    <tr>
+      
+        <td><%= product.productName %></td>
+        <td><%= product.quantityInStock %></td></div>
+      <td><%= number_to_currency(product.MSRP) %></td>
+     <td><%= link_to 'View', product_path(product), class: 'btn btn-primary'%></td>
+         <td><%= button_to 'Add to Cart', line_items_path(product_id: product), class:'btn btn-primary', remote: true %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+

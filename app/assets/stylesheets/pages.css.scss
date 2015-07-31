@@ -1,0 +1,197 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans+Condensed:700,300);
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+h1, h2, h3, h4, h5, h6, th{
+     font-family: 'Open Sans Condensed', sans-serif;
+     font-weight:300;
+}
+
+nav{
+    a{
+        font-family:'Open Sans Condensed', sans-serif;
+        font-weight:700;
+    }
+}
+
+
+div, p{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing:2px;
+}
+    
+    header{
+       position:relative;
+       background-color:#c1c1c1;
+       margin-right:auto;
+       margin-left:auto;
+    
+     ul { 
+      float:right;
+      margin-right:90px;
+      padding-bottom:0px;
+      position:relative;
+      top:15px;
+        
+      li{
+          display:inline-block;
+            margin-left:10px;
+    
+            #login{
+                background-color:red;
+                min-width:100px;
+            }
+            #cart{
+                background-color:green;
+                min-width:100px;
+            }
+           
+      }
+    }
+}
+    
+    #logo{
+        margin-top:50px;
+        img{
+            float:left;
+            width:150px;
+            height:107px;
+            margin-left:100px;
+
+        }
+    }
+
+nav{
+    background-color:#0071BC;
+    clear:both;
+    margin-top:10px;
+    margin-right:50px;
+    margin-left:50px;
+     .navb {
+         display:inline;
+         background-color:#0071BC;
+         
+        li{
+            text-decoration:none;
+            display:inline;
+            margin:10px;
+             a{   
+                color:white;
+                text-decoration:none;
+                font-size:2em;
+       }
+    }
+ 
+  }
+  .form-group{
+      margin-right:50px;
+  }
+  .dropdown{
+      ul{
+          background-color:#0071BC;
+          a{
+              font-size:16px;
+          }
+      }
+      
+    
+}
+}
+
+footer{
+    background-color:#c1c1c1;
+    padding:0px;
+    height:100px;
+    
+    hr
+    {
+        height:1px;
+        width:95%;
+       background:#adadad;
+        position:relative;  top:10px;}
+    
+    
+    div {
+        margin-left:50px;
+        }
+}
+
+.social{
+    float:left;
+    width:300px;
+    height:50px;
+    margin-bottom:0px;
+    padding-top:10px;
+    li{
+        margin:5px;
+    }
+}
+
+
+h1 {
+color: #f07103;
+text-align: center;
+}
+
+.checkout{
+    h1{
+     width:200px;
+    
+    }
+    margin-bottom:30px;
+    margin-left:200px;
+ fieldset{
+     border: 2px solid #009;
+     width:600px;
+     padding:20px;
+   
+     }
+    
+    .field{
+        margin:10px;
+     input{
+         width:80%;
+     }
+    textarea{
+        width:80%;
+    }
+        
+    }
+    .order-summary{
+        margin-right:50px;
+        background-color:#c0cbd3;
+        padding:5px;
+    }
+    
+ }
+
+#admin-actions{
+    
+    a{text-decoration:none;}
+    ul{background-color:#a8a8e0;
+    
+    a:hover {
+        background-color:blue;
+        color:white;
+    }
+    }
+}
+
+    
+
+
+
+
+.notice {
+    margin-left:275px;
+    background-color:#c4d8dd;
+    width:450px;
+    padding:5px;
+    text-align:left;
+}

@@ -1,0 +1,57 @@
+<div class='container'>
+<% if flash[:error] %>
+  <p id='order_error'><%= flash[:error] %></p>
+<% end %>
+
+<div class='details'><h2>Customer Details</h2>
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Ship To:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Pay type:</strong>
+  <%= @order.pay_type %>
+</p>
+<p>
+  <strong>Order Total:</strong>
+  <%= number_to_currency(@order.order_total) %>
+</p>
+<p>
+  <strong>Order Status:</strong>
+  <%= @order.status %>
+</p>
+</div>
+</br>
+<div class='lineitems'>
+    <table class = 'table'>
+    <thead>
+    <tr>
+      <th>Product Code</th>
+      <th>Product Name</th>
+      <th>Amount in Stock</th>
+      <th>Number Ordered</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+    <% @order.line_items.each do |t| %>
+    <tr>
+        <td><%=t.product.productCode%></td> 
+      <td><%=t.product.productName%></td> 
+       <td><%=t.product.quantityInStock%></td> 
+        <td><%=t.quantity%></td>
+        </tr>
+    <%end%>
+        </table>
+</div>
+
+<div id='order-buttons' class="btn-group inline pull-left">
+<%= link_to 'Fill Order', fill_order_path(@order), method: :put, class:'btn btn-primary' %> 
+<%= link_to 'Back', orders_path, class:'btn btn-primary'%></div>
+</div>
